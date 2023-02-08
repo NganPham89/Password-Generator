@@ -31,7 +31,7 @@ function passwordChoices() {
   }
 
   if (passwordResult <= 0) {
-    alert("You must choose at least one option");
+    alert("You must choose at least one option \nPlease try again");
     return; //end this function here if nothing is chosen
   }
 
