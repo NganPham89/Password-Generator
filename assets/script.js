@@ -7,10 +7,10 @@ var charSpecial = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", "
 function passwordChoices() {
   passwordResult = []; //use to store all the chosen items from the 4 arrays, starting at nothing
 
-  passwordLength = parseInt(prompt("How long would you like your password? \n(Mininum 8 and maximum 128 characters)"));
+  passwordLength = parseInt(prompt("How long would you like your password? \n(Mininum 8 and maximum 128 characters)")); 
   //NaN "Not a Number"
   if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
-    alert("Your password length has to be a number between 8 and 128");
+    alert("Invalid entry \nYour password length has to be a number between 8 and 128 \nPlease try again");
     return; //end function if the user response is not within range
   }
 
@@ -29,14 +29,20 @@ function passwordChoices() {
   if (confirm("Would you like to have special characters in your password?")) {
     passwordResult = passwordResult.concat(charSpecial);
   }
+
+  if (passwordResult <= 0) {
+    alert("You must choose at least one option");
+    return; //end this function here if nothing is chosen
+  }
+
   return true; //true if all user inputs go through
 }
 
 var generatePassword = function () {
   var passwordFinal = " ";
   for (var i = 0; i < passwordLength; i++) {
-    var randomPick = Math.floor(Math.random() * passwordResult.length);
-    passwordFinal = passwordFinal + passwordResult[randomPick];
+    var randomChar = Math.floor(Math.random() * passwordResult.length);
+    passwordFinal = passwordFinal + passwordResult[randomChar];
   }
   return passwordFinal;
 }
