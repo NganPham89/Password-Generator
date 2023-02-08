@@ -29,7 +29,7 @@ function passwordChoices() {
   if (confirm("Would you like to have special characters in your password?")) {
     passwordResult = passwordResult.concat(charSpecial);
   }
-  return true; //true if all chosen arrays are combined successfully
+  return true; //true if all user inputs go through
 }
 
 var generatePassword = function () {
@@ -44,6 +44,9 @@ var generatePassword = function () {
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
 // Write password to the #password input
 function writePassword() {
   //only run if passwordChoices function runs the whole way
@@ -54,6 +57,3 @@ function writePassword() {
     passwordText.value = password;
   }
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
