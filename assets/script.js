@@ -30,7 +30,7 @@ function passwordChoices() {
     passwordResult = passwordResult.concat(charSpecial);
   }
 
-  if (passwordResult === undefined) {
+  if (passwordResult.length === 0) {
     alert("You must choose at least one option \nPlease try again");
     return; //end this function here if nothing is chosen
   }
