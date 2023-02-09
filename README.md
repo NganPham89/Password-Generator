@@ -1,5 +1,8 @@
 # Password-Generator
-A webpage that can generate a unique password using Javascript
+A webpage that can generate a unique password using Javascript. It can be found [here](https://nganpham89.github.io/Password-Generator/).
+
+## Screenshots
+![Application](/assets/img/app_sample.jpg)
 
 ## Usage
 
@@ -9,6 +12,7 @@ A webpage that can generate a unique password using Javascript
 - Includes upper case letter
 - Includes number
 - Includes various special characters, refer to [OWASP Foundations Site](https://owasp.org/www-community/password-special-characters) for complete list
+![Example](/assets/img/app_screen.jpg)
 
 ## Goals of this project
 - [x] Learning about prompt, confirm, alert 
